@@ -1,12 +1,7 @@
-// let income = document.getElementById("income");
 
-// let food = document.getElementById("food");
-// let rent = document.getElementById("rent");
-// let clothes = document.getElementById("clothes");
 
 function calculate() {
-    // var income = parseInt(document.getElementById("income").value);
-    // console.log(income);
+
 
     var income = document.getElementById("income").value;
     var food = (document.getElementById("food").value);
@@ -15,11 +10,6 @@ function calculate() {
     let expense = 0;
     if (income == "" || food == "" || rent == "" || clothes == "") {
         alert("Not accepted");
-        // if (isNaN(income) && isNaN(food) && isNaN(rent) && isNaN(clothes)) {
-        //     if (income == ' ' && food == ' ' && rent == ' ' && clothes == ' ') {
-
-        //     }
-        // }
     }
     else if (isNaN(income) || isNaN(food) || isNaN(rent) || isNaN(clothes)) {
         alert("Not accepted");
@@ -52,30 +42,33 @@ function calculate() {
 }
 
 function saveButton() {
-    // let saving = document.getElementById("save");
-    // let savingAmount = Number(income.value * saving.value) / 100;
+
 
     var saving = document.getElementById("save").value;
     var mainIncome = document.getElementById("income").value;
+    var previousBalance = document.getElementById("total-balance").innerText;
+    var savingAmount = (saving * mainIncome) / 100;
 
-    if (save == "") {
+
+    if (saving == "") {
         alert("You must insert between 0 to 100");
     }
-    else if (isNaN(save)) {
+    else if (isNaN(saving)) {
         alert("you must enter number");
 
     }
-    else if (save < 0 || save > 100) {
+    else if (parseInt(saving) < 0 || parseInt(saving) > 100) {
         alert("you must insert value between 0 and 100");
     }
+    else if (savingAmount > previousBalance) {
 
+        alert("saving is more than your current balance, save less");
+        document.getElementById("total-remaining").innerHTML = "";
+    }
+    else {
+        document.getElementById("total-saving").innerHTML = savingAmount;
+        var lastRemaining = Number(previousBalance) - savingAmount;
+        document.getElementById("total-remaining").innerHTML = lastRemaining;
 
-    var savingAmount = (saving * mainIncome) / 100;
-
-    document.getElementById("total-saving").innerHTML = savingAmount;
-
-    let previousBalance = document.getElementById("total-balance").innerText;
-    let lastRemaining = Number(previousBalance) - savingAmount;
-    document.getElementById("total-remaining").innerHTML = lastRemaining;
-
+    }
 }
