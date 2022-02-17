@@ -1,3 +1,4 @@
+//validate expense field
 function validateExpenseInputField() {
     let flag = false;
     var income = document.getElementById("income").value;
@@ -23,6 +24,7 @@ function validateExpenseInputField() {
 }
 
 
+// calculation function
 function calculate() {
     var income = document.getElementById("income").value;
     var food = (document.getElementById("food").value);
@@ -53,6 +55,7 @@ function updateExpenseBalance(expense, balance) {
 }
 
 
+//function for validate input field 
 function validateSavingInputField() {
     let flag = false;
     var saving = document.getElementById("save").value;
@@ -82,7 +85,7 @@ function validateSavingInputField() {
 
 
 
-// onclick event handler 
+// onclick event handler for save button
 function saveButton() {
 
     let flag = false;
