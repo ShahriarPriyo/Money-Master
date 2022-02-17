@@ -1,4 +1,4 @@
-
+/* import google font */
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
 body{
@@ -26,6 +26,8 @@ body{
 input{
     background-color: rgba(220, 220, 220, 1) !important;
 }
+
+/* calculate button */
 .calculate-btn{
     padding: 10px 30px;
     background: #59A5FF;
@@ -36,6 +38,7 @@ input{
     border: none;
 }
 
+/* save button */
 .save-btn{
     padding: 8px 30px;
     background: #59A5FF;
